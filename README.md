@@ -1,92 +1,136 @@
-# Data Warehouse and Analytics Project
+# SQL Data Warehouse & Analytics Solution
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
-
----
-## 🏗️ Data Architecture
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-![Data Architecture](docs/architecture.png)
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
----
-## 📖 Project Overview
-
-This project involves:
-
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
-
-🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
-- SQL Development
-- Data Architect
-- Data Engineering  
-- ETL Pipeline Developer  
-- Data Modeling  
-- Data Analytics
-  
----
-
-## 🚀 Project Requirements
-
-### Building the Data Warehouse (Data Engineering)
-
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+A practical data engineering and analytics project focused on building a modern data warehouse in SQL Server. The project covers the complete workflow from raw data ingestion to analytical reporting, following industry-standard warehousing practices.
 
 ---
 
-### BI: Analytics & Reporting (Data Analysis)
+## 📊 Solution Architecture
 
-#### Objective
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
+This project implements a Medallion-style architecture consisting of three processing layers:
 
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
+![Architecture Diagram](docs/architecture.png)
 
-## 📂 Repository Structure
-```
+### Bronze Layer
+
+* Stores source data in its original format.
+* Loads ERP and CRM CSV files into SQL Server without significant transformations.
+* Acts as the system's raw data repository.
+
+### Silver Layer
+
+* Performs data cleansing and validation.
+* Standardizes formats and resolves quality issues.
+* Produces consistent and reliable datasets for downstream processing.
+
+### Gold Layer
+
+* Contains curated business-ready datasets.
+* Implements dimensional modeling using a star schema design.
+* Supports reporting, dashboarding, and analytical workloads.
+
+---
+
+## 📌 Project Summary
+
+The goal of this project is to design and implement a centralized data warehouse that integrates information from multiple business systems and transforms it into a format suitable for analysis.
+
+Key components include:
+
+* Designing a layered data warehouse architecture.
+* Developing ETL workflows to move and transform data.
+* Creating fact and dimension tables for analytical querying.
+* Producing SQL-driven business insights and reports.
+
+### Skills Demonstrated
+
+* SQL Development
+* Data Warehousing
+* ETL Design & Implementation
+* Data Modeling
+* Data Engineering
+* Business Analytics
+
+---
+
+## 🎯 Business Requirements
+
+### Data Warehouse Development
+
+#### Goal
+
+Build a SQL Server data warehouse that consolidates sales-related information from different operational systems into a single analytical platform.
+
+#### Requirements
+
+* Import ERP and CRM datasets provided as CSV files.
+* Address data quality issues during transformation stages.
+* Merge multiple source systems into a unified analytical model.
+* Focus on the most recent available data (historical tracking is out of scope).
+* Maintain documentation describing the warehouse structure and business entities.
+
+---
+
+### Analytics & Reporting
+
+#### Goal
+
+Generate analytical outputs that help stakeholders understand business performance and support decision-making.
+
+#### Analysis Areas
+
+* Customer Analysis
+* Product Performance Evaluation
+* Sales Trend Monitoring
+* Business KPI Reporting
+
+The final data model is designed to provide reliable metrics and actionable insights for business users.
+
+---
+
+## 📁 Repository Layout
+
+```text
 data-warehouse-project/
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── datasets/
+│   └── Source ERP and CRM datasets
 │
-├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+├── docs/
+│   ├── etl.drawio
+│   ├── data_architecture.drawio
+│   ├── data_catalog.md
+│   ├── data_flow.drawio
+│   ├── data_models.drawio
+│   └── naming-conventions.md
 │
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
+├── scripts/
+│   ├── bronze/
+│   │   └── Raw data loading scripts
+│   │
+│   ├── silver/
+│   │   └── Data cleansing and transformation scripts
+│   │
+│   └── gold/
+│       └── Dimensional model and reporting scripts
 │
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
+
 ---
 
-## 🛡️ License
+## 🏆 Outcomes
 
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
-[![Newsletter](https://img.shields.io/badge/Newsletter-FF5722?style=for-the-badge&logo=substack&logoColor=white)](https://bit.ly/BaraaNewsletter)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/baraasalkini)
-[![Join](https://img.shields.io/badge/Join-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@datawithbaraa)
+By completing this project, the following objectives were achieved:
+
+* Centralized data from multiple source systems.
+* Improved data quality through structured transformation processes.
+* Built a scalable dimensional model for analytics.
+* Delivered business-focused SQL reports and insights.
+
+---
+
+## 📄 License
+
+This repository is available under the MIT License. Feel free to use, modify, and extend the project for educational or portfolio purposes.
